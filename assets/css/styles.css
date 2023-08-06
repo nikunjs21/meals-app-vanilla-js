@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bg-header{
+    height: calc(100% - 57px);
+    background: url('../images/bg-header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.backdrop{
+    margin-bottom: auto;
+
+}
