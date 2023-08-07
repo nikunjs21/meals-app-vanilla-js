@@ -14,10 +14,21 @@
     <link rel="stylesheet" href="assets/magic/dist/magic.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
+  <body class="bg-header">
     <header>
-      <nav class="navbar border-bottom navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <nav
+        class="navbar border-bottom navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Meals</a>
           <button
@@ -37,43 +48,6 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categories
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Another action</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Areas
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Another action</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="favourites.html">Favourites</a>
               </li>
             </ul>
@@ -81,19 +55,40 @@
         </div>
       </nav>
     </header>
-    <main class="bg-header">
-        <div class="container-flex backdrop h-100">
-            <div class="row h-100">
-                <div class="col-md-12">
-                    <div class="row d-flex justify-content-center aligh-items-center h-100">
-                        <div class="col-md-12">
-                            
-                            <input type="text" class="form-control" placeholder="search">
-                        </div>
-                    </div>
-                </div>
+    <main class="">
+      <div class="container-flex backdrop h-100">
+        <div class="row h-100">
+          <div class="col-md-12">
+            <div class="row m-5">
+              <div class="col-md-12">
+                <h1 class="text-light text-center magictime slideDownReturn">
+                  Search Your Favourite Food
+                </h1>
+              </div>
             </div>
+            <div class="row d-flex justify-content-center aligh-items-center">
+              <div class="col-md-4">
+                <div class="input-group col-md-4 magictime slideDownReturn">
+                  <input
+                    class="form-control py-2 border-right-0 border"
+                    type="search"
+                    placeholder="search"
+                    id="example-search-input"
+                  />
+                  <span class="input-group-append">
+                    <button
+                      class="btn btn-outline-secondary border-left-0 border d-flex justify-content-center align-items-center h-100 magictime twisterInDown"
+                      type="button"
+                    >
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <script

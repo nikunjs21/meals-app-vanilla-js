@@ -1,5 +1,12 @@
+@font-face{
+    font-family: CroissantOne;
+    src: url('../fonts/CroissantOne-Regular.ttf') format('truetype'),
+        url('../fonts/CroissantOne-Regular.otf') format('opentype');
+}
+
 *{
     box-sizing: border-box;
+    font-family: 'CroissantOne', Times, serif;
 }
 
 html, body{
