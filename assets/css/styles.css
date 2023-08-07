@@ -25,7 +25,44 @@ html, body{
     background-repeat: no-repeat;
 }
 
-.backdrop{
-    margin-bottom: auto;
+.card-title {
+    font-size: 1.25rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
 
+.favourite-btn::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 0;
+    content: "\f08a"; /* Unicode for the heart outline icon */
+    margin-right: 0.25rem;
+}
+
+.favourite-btn.active::before{
+    display: none;
+}
+
+.favourite-btn::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f004"; /* Unicode for the heart outline icon */
+    margin-right: 0.25rem;
+    display: none;
+}
+
+.favourite-btn.active::after{
+    display: flex;
+}
+
+.favourite-btn.active.delete::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f2ed"; /* Unicode for the heart outline icon */
+    margin-right: 0.25rem;
+}
+
+.favourite-btn{
+    text-decoration: none;
+    font-size: 1.8rem;
 }
