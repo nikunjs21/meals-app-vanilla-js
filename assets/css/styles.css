@@ -23,6 +23,7 @@ html, body{
     background: url('../images/bg-header.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .card-title {
@@ -65,4 +66,5 @@ html, body{
 .favourite-btn{
     text-decoration: none;
     font-size: 1.8rem;
+    display: inline-block;
 }
