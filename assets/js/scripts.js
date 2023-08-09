@@ -88,12 +88,14 @@ function renderList(meals = [], includeDeleteBtn = false) {
 
   // because all the time when item
   favouriteBtn.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
       const mealId = button.getAttribute("data-id");
       console.log("mealId", mealId);
       if (button.classList.contains("delete")) {
         //delete from favourite list
         removeFavourite(mealId);
+        renderFavourites();
       } else {
         if(button.classList.contains("active")){
             button.classList.remove("active");

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meals App - Home</title>
+    <title>Meals App - Details</title>
 
     <!-- Bootstrap CSS for UI -->
     <link
@@ -30,7 +30,7 @@
         data-bs-theme="dark"
       >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Meals</a>
+          <a class="navbar-brand" href="/">Meals</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -57,7 +57,12 @@
     </header>
     <main class="">
       <div class="container backdrop h-100">
-        <div class="row mt-5" id="itemsContainer">
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <h1 id="meal-title"></h1>
+            <h2 id="meal-category"></h2>
+            <h3 id="meal-area"></h3>
+          </div>
         </div>
       </div>
     </main>
