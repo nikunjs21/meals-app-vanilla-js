@@ -42,6 +42,10 @@ function isItemFavourite(favourites, item){
     return index !== -1;
 }
 
+function redirectToDetailsPage(itemId){
+  window.location.href = `./meal-details.html?id=${itemId}`;
+}
+
 // render list of items
 function renderList(meals = [], includeDeleteBtn = false) {
   // favourite items to check if it is favourite or not. if it is favourite then we will active the favourite btn
@@ -57,7 +61,7 @@ function renderList(meals = [], includeDeleteBtn = false) {
     } else if (isItemFavourite(favourites, item)) {
         buttonClass = "active";
     }
-    const content = `<div class="card text-bg-dark m-2">
+    const content = `<div class="card meal-card text-bg-dark m-2" onclick="redirectToDetailsPage(${item?.idMeal})">
                         <img
                             src="${item?.strMealThumb}"
                             class="card-img-top"
@@ -66,7 +70,7 @@ function renderList(meals = [], includeDeleteBtn = false) {
                         <div class="card-body">
                             <h5 class="card-title">${item?.strMeal}</h5>
                             <p class="card-text">Category: ${item?.strCategory}</p>
-                            <p class="card-text">Origin: ${item?.strArea}</p>                
+                            <p class="card-text">Origin: ${item?.strArea}</p>
                             <a href="javascript:void(0)" data-id="${item?.idMeal}" class="favourite-btn text-danger ${buttonClass}"></a>
                         </div>
                     </div>`;
@@ -113,26 +117,16 @@ function resetList() {
   renderList([]);
 }
 
-let searchInput = document.getElementById("input-search-meal");
 
 async function setupMeals(searchString){
-    try {
-        const meals = await searchMeals(searchString);
-        if (meals) {
-            renderList(meals.meals);
-        } else {
-            resetList();
-        }
-    } catch (error) {
-        console.log(error);
+  try {
+    const meals = await searchMeals(searchString);
+    if (meals) {
+      renderList(meals.meals);
+    } else {
+      resetList();
     }
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-searchInput.addEventListener("keyup", (e) => {
-    setupMeals(e.target.value);
-});
-
-// Initially set all values
-(function(){
-    setupMeals("");
-})();

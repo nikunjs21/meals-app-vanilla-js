@@ -68,3 +68,7 @@ html, body{
     font-size: 1.8rem;
     display: inline-block;
 }
+
+.meal-card{
+    cursor: pointer;
+}
