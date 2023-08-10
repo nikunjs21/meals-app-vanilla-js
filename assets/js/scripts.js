@@ -122,6 +122,13 @@ function resetList() {
 
 async function setupMeals(searchString){
   try {
+    let itemsContainer = document.getElementById("itemsContainer");
+    const loader = `<div class="d-flex justify-content-center align-items-center w-100 magictime slideDownReturn">
+                      <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>`;
+    itemsContainer.innerHTML = loader;
     const meals = await searchMeals(searchString);
     if (meals) {
       renderList(meals.meals);
