@@ -22,6 +22,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- custom css for food image -->
     <style>
       #food_image {
         width: 100%;
@@ -30,12 +31,16 @@
     </style>
   </head>
   <body class="text-bg-dark bg-header">
+     <!-- Loader -->
     <div class="loader d-none">
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
+
+    <!-- header -->
     <header>
+      <!-- nav -->
       <nav
         class="navbar border-bottom navbar-expand-lg bg-body-tertiary"
         data-bs-theme="dark"
@@ -67,13 +72,18 @@
           </div>
         </div>
       </nav>
+      <!-- end of nav -->
     </header>
+    <!-- end of header -->
+
     <main class="">
       <div class="container details-container h-100 d-none">
         <div class="row mt-5">
+          <!-- food image  -->
           <div class="col-md-4">
             <img id="food_image" src="" alt="Food Image" />
           </div>
+          <!-- Primary Details -->
           <div class="col-md-8">
             <h1 id="meal-title" class="display-1"></h1>
             <div id="primary-info-container">
@@ -81,6 +91,7 @@
               <h3 id="meal-area"></h3>
             </div>
           </div>
+          <!-- Secondary Details -->
           <div class="col-md-12 mt-3" id="secondary-info-container">
             <h3>Ingredients</h3>
             <table class="table table-dark table-bordered table-striped">
@@ -90,14 +101,18 @@
                   <th>Measure</th>
                 </tr>
               </thead>
+              <!-- Ingredient -->
               <tbody class="ingredient-rows"></tbody>
             </table>
+            <!-- Meal Description -->
             <p id="meal-description"></p>
           </div>
         </div>
       </div>
     </main>
+    <!-- end of main -->
 
+    <!-- Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

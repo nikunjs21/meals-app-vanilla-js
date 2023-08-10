@@ -1,24 +1,29 @@
-@font-face{
+/* Define custom font for the page */
+@font-face {
     font-family: CroissantOne;
     src: url('../fonts/CroissantOne-Regular.ttf') format('truetype'),
-        url('../fonts/CroissantOne-Regular.otf') format('opentype');
+         url('../fonts/CroissantOne-Regular.otf') format('opentype');
 }
 
-*{
+/* Apply box-sizing and font to all elements on the page */
+* {
     box-sizing: border-box;
     font-family: 'CroissantOne', Times, serif;
 }
 
-html, body{
+/* Set full height for HTML and body elements */
+html, body {
     height: 100%;
 }
 
-.row{
+/* Reset left and right margin for rows */
+.row {
     margin-left: 0;
     margin-right: 0;
 }
 
-.bg-header{
+/* Styling for the header background */
+.bg-header {
     height: calc(100% - 57px);
     background: url('../images/bg-header.jpg');
     background-size: cover;
@@ -26,6 +31,7 @@ html, body{
     background-attachment: fixed;
 }
 
+/* Styling for card titles */
 .card-title {
     font-size: 1.25rem;
     border-bottom: 1px solid #ccc;
@@ -33,47 +39,55 @@ html, body{
     margin-bottom: 1rem;
 }
 
-.favourite-btn::before{
+/* Styling for the heart icon before the favorite button */
+.favourite-btn::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 0;
     content: "\f08a"; /* Unicode for the heart outline icon */
     margin-right: 0.25rem;
 }
 
-.favourite-btn.active::before{
+/* Hide the heart icon before the favorite button when active */
+.favourite-btn.active::before {
     display: none;
 }
 
-.favourite-btn::after{
+/* Styling for the filled heart icon after the favorite button */
+.favourite-btn::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f004"; /* Unicode for the heart outline icon */
+    content: "\f004"; /* Unicode for the heart icon */
     margin-right: 0.25rem;
     display: none;
 }
 
-.favourite-btn.active::after{
+/* Show the filled heart icon after the favorite button when active */
+.favourite-btn.active::after {
     display: flex;
 }
 
-.favourite-btn.active.delete::after{
+/* Show trash icon for "delete" class */
+.favourite-btn.active.delete::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f2ed"; /* Unicode for the heart outline icon */
+    content: "\f2ed"; /* Unicode for the trash icon */
     margin-right: 0.25rem;
 }
 
-.favourite-btn{
+/* Styling for the favorite button */
+.favourite-btn {
     text-decoration: none;
     font-size: 1.8rem;
     display: inline-block;
 }
 
-.meal-card{
+/* Styling for meal cards with pointer cursor */
+.meal-card {
     cursor: pointer;
 }
 
-.loader{
+/* Styling for the loader with backdrop */
+.loader {
     position: absolute;
     top: 0;
     bottom: 0;

@@ -37,11 +37,13 @@ function removeFavourite(itemId) {
   setFavourites(favourites);
 }
 
+// check if item is favourite or not. return true if it is.
 function isItemFavourite(favourites, item){
     const index = favourites.findIndex((favItem) => favItem.idMeal === item?.idMeal);
     return index !== -1;
 }
 
+// redirect to meal details page if user clicks on the item
 function redirectToDetailsPage(itemId){
   window.location.href = `./meal-details.html?id=${itemId}`;
 }
@@ -54,6 +56,8 @@ function renderList(meals = [], includeDeleteBtn = false) {
   let itemsContainer = document.getElementById("itemsContainer");
   // reset container before setting new content
   itemsContainer.innerHTML = "";
+
+  // run loop for meals to set the content
   meals.forEach((item) => {
     let buttonClass = "";
     if (includeDeleteBtn) {
@@ -81,6 +85,7 @@ function renderList(meals = [], includeDeleteBtn = false) {
     parnetDiv.classList.add("col-sm-6");
     parnetDiv.innerHTML = content;
 
+    // append card in items container
     itemsContainer.appendChild(parnetDiv);
   });
 
@@ -110,16 +115,18 @@ function renderList(meals = [], includeDeleteBtn = false) {
   });
 }
 
+// render favourites list
 function renderFavourites() {
   let favourites = getFavourites();
   renderList(favourites, true);
 }
 
+// reset list
 function resetList() {
   renderList([]);
 }
 
-
+// call the api service. before fetching the data we will show a loader.
 async function setupMeals(searchString){
   try {
     let itemsContainer = document.getElementById("itemsContainer");
@@ -130,6 +137,7 @@ async function setupMeals(searchString){
                     </div>`;
     itemsContainer.innerHTML = loader;
     const meals = await searchMeals(searchString);
+    // if meals is not empty then we will render the list. otherwise we will reset the list.
     if (meals) {
       renderList(meals.meals);
     } else {
